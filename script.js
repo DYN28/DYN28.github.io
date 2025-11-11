@@ -96,12 +96,12 @@ rsvpForm.addEventListener('submit', function(e) {
         }
         
         // Open WhatsApp with pre-filled message
-           const myWhatsAppNumber = "573203771843"; // Ejemplo: 521234567890
-    const message = encodeURIComponent(`Confirmación de asistencia. Número proporcionado: ${number}`);
-    const url = `https://wa.me/${myWhatsAppNumber}?text=${message}`
+        const message = document.getElementById('whatsappMessage').value || 'Confirmo mi asistencia a la boda de David y Nayely';
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodedMessage}`;
         
         // Open WhatsApp in a new tab
-        window.open(url, '_blank');
+        window.open(whatsappURL, '_blank');
     }
     
     // Show confirmation message
