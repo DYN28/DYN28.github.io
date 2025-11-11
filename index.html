@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de David & Nayely</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pink-50">
+    <!-- Header con imagen más larga -->
+    <header class="w-full h-96 md:h-[500px] relative">
+        <div class="absolute inset-0">
+            <img src="/img/portada 2.jpeg" alt="Cabecera de la Boda" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        </div>
+        <div class="relative h-full flex flex-col items-center justify-center text-center">
+            <div class="heart-icon text-7xl md:text-9xl mb-6 animated-heart"></div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-2">¡NOS CASAMOS!</h2>
+            <h1 class="couple-name text-4xl md:text-6xl mb-4">
+                <span>D</span><span>a</span><span>v</span><span>i</span><span>d</span> 
+                <span>&</span> 
+                <span>N</span><span>a</span><span>y</span><span>e</span><span>l</span><span>y</span>
+            </h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 hero-bg flex flex-col items-center justify-center text-center px-4">
+        <div class="max-w-4xl">
+            <p class="text-xl md:text-2xl pink-text mb-8 italic">El camino valdrá más la pena si lo recorremos juntos. Hoy empieza la mejor historia: la nuestra.</p>
+            <div class="flex justify-center space-x-4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown & Music Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Countdown Timer -->
+                <div class="countdown-box">
+                    <h3 class="text-xl font-semibold gold-text mb-4">¡Faltan!</h3>
+                    <div class="flex justify-center space-x-4">
+                        <div class="text-center">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Días</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Horas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Minutos</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Segundos</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Music Player -->
+                <div class="music-player">
+                    <h3 class="text-xl font-semibold gold-text mb-4">Nuestra Canción</h3>
+                    <div class="play-btn" id="playButton">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="song-title">Enamorados</div>
+                    <div class="song-artist">Tercer Cielo</div>
+                    <div class="mt-4 text-sm pink-text">
+                        <i class="fas fa-music mr-2"></i> Haz clic para reproducir
+                    </div>
+                    <!-- INSTRUCCIÓN: Para usar tu propia canción MP3, reemplaza el valor de src con la ruta de tu archivo -->
+                    <!-- Ejemplo: <audio id="weddingMusic" src="musica/mi_cancion.mp3"></audio> -->
+                    <audio id="weddingMusic" src="/img/Enamorados.mp3"></audio>
+                </div>
+            </div>
+            
+            <!-- Calendar -->
+            <div class="mt-8 calendar-container">
+                <div class="calendar-header">
+                    <div class="calendar-title">Calendario de la Boda</div>
+                    <div class="gold-text">Diciembre 2025</div>
+                </div>
+                <div class="calendar-grid">
+                    <!-- Days of the week -->
+                    <div class="calendar-day-header">Dom</div>
+                    <div class="calendar-day-header">Lun</div>
+                    <div class="calendar-day-header">Mar</div>
+                    <div class="calendar-day-header">Mié</div>
+                    <div class="calendar-day-header">Jue</div>
+                    <div class="calendar-day-header">Vie</div>
+                    <div class="calendar-day-header">Sáb</div>
+                    
+                    <!-- Calendar dates (simplified for December 2025) -->
+                    <!-- December 2025 starts on a Monday -->
+                    <div class="calendar-date">1</div>
+                    <div class="calendar-date">2</div>
+                    <div class="calendar-date">3</div>
+                    <div class="calendar-date">4</div>
+                    <div class="calendar-date">5</div>
+                    <div class="calendar-date">6</div>
+                    <div class="calendar-date">7</div>
+                    <div class="calendar-date">8</div>
+                    <div class="calendar-date">9</div>
+                    <div class="calendar-date">10</div>
+                    <div class="calendar-date">11</div>
+                    <div class="calendar-date">12</div>
+                    <div class="calendar-date">13</div>
+                    <div class="calendar-date">14</div>
+                    <div class="calendar-date">15</div>
+                    <div class="calendar-date">16</div>
+                    <div class="calendar-date">17</div>
+                    <div class="calendar-date">18</div>
+                    <div class="calendar-date">19</div>
+                    <div class="calendar-date">20</div>
+                    <div class="calendar-date">21</div>
+                    <div class="calendar-date">22</div>
+                    <div class="calendar-date">23</div>
+                    <div class="calendar-date">24</div>
+                    <div class="calendar-date">25</div>
+                    <div class="calendar-date">26</div>
+                    <div class="calendar-date">27</div>
+                    <div class="calendar-date wedding-day">28</div>
+                    <div class="calendar-date">29</div>
+                    <div class="calendar-date">30</div>
+                    <div class="calendar-date">31</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biblical Verses about Love -->
+    <section id="story" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold gold-text mb-4">Versículos del Amor</h2>
+                <div class="w-24 h-1 bg-pink-500 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Dios nos ha dado hermosas palabras sobre el amor que guiarán nuestro matrimonio.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="verse-card">
+                    <div class="verse-text">
+                        "El amor es paciente, es bondadoso. El amor no es envidioso ni presume, no se envanece, no se porta indecentemente, no busca su propio interés, no se irrita, no guarda rencor."
+                    </div>
+                    <div class="verse-reference">1 Corintios 13:4-5</div>
+                </div>
+                
+                <div class="verse-card">
+                    <div class="verse-text">
+                        "Por tanto, dejará el hombre a su padre y a su madre, y se unirá a su mujer, y los dos serán una sola carne. Esta es una gran verdad, y yo la aplico a Cristo y a la iglesia."
+                    </div>
+                    <div class="verse-reference">Efesios 5:31-32</div>
+                </div>
+                
+                <div class="verse-card">
+                    <div class="verse-text">
+                        "Y ahora permanecen la fe, la esperanza y el amor, estos tres; pero el mayor de ellos es el amor."
+                    </div>
+                    <div class="verse-reference">1 Corintios 13:13</div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-semibold gold-text mb-4">Historias Bíblicas del Amor</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold pink-text mb-3">Rut y Booz</h4>
+                        <p class="text-gray-600">
+                            La historia de Rut muestra un amor leal y fiel. Rut eligió quedarse con su suegra Naomi, diciendo: "Adonde tú fueres, iré yo, y donde tú vivieres, viviré yo; tu pueblo será mi pueblo, y tu Dios será mi Dios." (Rut 1:16)
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold pink-text mb-3">Isaac y Rebeca</h4>
+                        <p class="text-gray-600">
+                            Isaac amó a Rebeca profundamente. Después de que Abraham enviara a su sirviente a buscar una esposa para Isaac, éste la recibió con amor y consuelo, convirtiéndola en su esposa. (Génesis 24:67)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details -->
+    <section id="details" class="py-16 bg-pink-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold gold-text mb-4">Detalles del Evento</h2>
+                <div class="w-24 h-1 bg-pink-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-alt pink-text text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold pink-text mb-2">Fecha y Hora</h3>
+                    <p class="text-gray-600">28 de Diciembre, 2025</p>
+                    <p class="text-gray-600">4:30 PM</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt pink-text text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold pink-text mb-2">Lugar</h3>
+                    <p class="text-gray-600 font-medium">Bucaramanga</p>
+                    <p class="text-gray-600">Ciudad Bonita</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock pink-text text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold pink-text mb-2">Itinerario</h3>
+                    <p class="text-gray-600">4:30 PM - Ceremonia</p>
+                    <p class="text-gray-600">5:30 PM - Recepción</p>
+                    <p class="text-gray-600">7:00 PM - Cena</p>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold gold-text mb-4">Confirmar Asistencia</h2>
+                <div class="w-24 h-1 bg-pink-500 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Por favor confirma tu asistencia antes del 15 de Diciembre. Envíanos un mensaje por WhatsApp para confirmar tu presencia.
+                </p>
+            </div>
+            
+            <div class="rsvp-form p-6 md:p-8">
+                <form id="rsvpForm" class="space-y-6">
+                    <div>
+                        <label class="block pink-text font-medium mb-2">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="guestName"
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                            placeholder="Tu nombre"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label class="block pink-text font-medium mb-2">¿Asistirás al evento?</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input
+                                    type="radio"
+                                    name="rsvp"
+                                    value="yes"
+                                    class="h-5 w-5 text-pink-600"
+                                >
+                                <span class="ml-2">Sí, con gusto asistiré</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input
+                                    type="radio"
+                                    name="rsvp"
+                                    value="no"
+                                    class="h-5 w-5 text-pink-600"
+                                >
+                                <span class="ml-2">Lo siento, no podré asistir</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="whatsappFields" class="hidden">
+                        <div class="mb-4">
+                            <label class="block pink-text font-medium mb-2">
+                                Número de WhatsApp (para confirmar tu asistencia)
+                            </label>
+                            <input
+                                type="tel"
+                                id="whatsappNumber"
+                                required
+                                class="w-full px-4 py-3 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                                placeholder="+52 123 456 7890"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block pink-text font-medium mb-2">
+                                Mensaje (opcional)
+                            </label>
+                            <textarea
+                                id="whatsappMessage"
+                                class="w-full px-4 py-3 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                                placeholder="Escribe tu mensaje para nosotros"
+                                rows="2"
+                            ></textarea>
+                        </div>
+                    </div>
+                    
+                    <button
+                        type="submit"
+                        class="w-full bg-pink-600 text-white py-3 rounded-lg font-medium hover:bg-pink-700 transition-colors"
+                    >
+                        Enviar Confirmación por WhatsApp
+                    </button>
+                </form>
+                
+                <div id="confirmationMessage" class="hidden text-center py-8">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart pink-text text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold pink-text mb-2">¡Gracias por confirmar!</h3>
+                    <p class="text-gray-600">Hemos recibido tu confirmación. ¡Nos vemos en la boda!</p>
+                    <p class="text-gray-600 mt-2">Pronto recibirás un mensaje de confirmación en WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-pink-800 text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">¿Preguntas?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-envelope text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="opacity-90">javidramoss@hotmail.com</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-phone text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Teléfono</h3>
+                    <p class="opacity-90">+57 3203771843</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-user-friends text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Coordinadora</h3>
+                    <p class="opacity-90">Nayely Sanjuan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-pink-900 text-pink-200 text-center">
+        <p>© 2025 David & Nayely. Todos los derechos reservados.</p>
+        <p class="mt-2">Hecho con ❤️ para celebrar nuestro amor</p>
+    </footer>
+
+    <!-- Floating Music Button -->
+    <div class="floating-music-btn" id="floatingMusicBtn">
+        <div class="play-btn">
+            <i class="fas fa-music"></i>
+        </div>
+    </div>
+
+    <!-- Audio Player (hidden) -->
+    <audio id="weddingMusic" src="https://example.com/tu_cancion.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
