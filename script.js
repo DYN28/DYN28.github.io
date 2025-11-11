@@ -101,7 +101,7 @@ rsvpForm.addEventListener('submit', function(e) {
     const url = `https://wa.me/${myWhatsAppNumber}?text=${message}`
         
         // Open WhatsApp in a new tab
-        window.open(whatsappURL, '_blank');
+       window.open(url, '_blank');
     }
     
     // Show confirmation message
