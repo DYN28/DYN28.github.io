@@ -69,51 +69,49 @@ weddingMusic.addEventListener('ended', function() {
 
 // RSVP form functionality
 const rsvpForm = document.getElementById('rsvpForm');
-const whatsappFields = document.getElementById('whatsappFields');
 const confirmationMessage = document.getElementById('confirmationMessage');
-
-// Show/hide WhatsApp fields based on RSVP selection
-document.querySelectorAll('input[name="rsvp"]').forEach(radio => {
-    radio.addEventListener('change', function() {
-        if (this.value === 'yes') {
-            whatsappFields.classList.remove('hidden');
-        } else {
-            whatsappFields.classList.add('hidden');
-        }
-    });
-});
 
 // Form submission
 rsvpForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Validate WhatsApp number if attending
-    if (document.querySelector('input[name="rsvp"]:checked')?.value === 'yes') {
-        const whatsappNumber = document.getElementById('whatsappNumber').value;
-        if (!whatsappNumber) {
-            alert('Por favor, ingresa tu número de WhatsApp para confirmar tu asistencia');
-            return;
-        }
-        
-        // Open WhatsApp with pre-filled message
-        const message = document.getElementById('whatsappMessage').value || 'Confirmo mi asistencia a la boda de David y Nayely';
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodedMessage}`;
-        
-        // Open WhatsApp in a new tab
-        window.open(whatsappURL, '_blank');
+    // Obtener datos del formulario
+    const guestName = document.getElementById('guestName').value;
+    const rsvpStatus = document.querySelector('input[name="rsvp"]:checked')?.value;
+    const message = document.getElementById('whatsappMessage').value || 'Confirmo mi asistencia a la boda de David y Nayely';
+    
+    // Validar campos obligatorios
+    if (!guestName) {
+        alert('Por favor, ingresa tu nombre completo');
+        return;
     }
     
-    // Show confirmation message
+    if (!rsvpStatus) {
+        alert('Por favor, selecciona si asistirás al evento');
+        return;
+    }
+    
+    // Preparar mensaje personalizado
+    let finalMessage = `*Nombre:* ${guestName}\n*Confirmación:* ${rsvpStatus === 'yes' ? 'Sí, asistiré' : 'No podré asistir'}\n\n${message}`;
+    
+    // Codificar mensaje para WhatsApp
+    const encodedMessage = encodeURIComponent(finalMessage);
+    
+    // URL de WhatsApp con el número fijo
+    const whatsappURL = `https://wa.me/573203771843?text=${encodedMessage}`;
+    
+    // Abrir WhatsApp en una nueva pestaña
+    window.open(whatsappURL, '_blank');
+    
+    // Mostrar mensaje de confirmación
     rsvpForm.classList.add('hidden');
     confirmationMessage.classList.remove('hidden');
     
-    // Reset form after 5 seconds
+    // Resetear formulario después de 5 segundos
     setTimeout(() => {
         rsvpForm.reset();
         rsvpForm.classList.remove('hidden');
         confirmationMessage.classList.add('hidden');
-        whatsappFields.classList.add('hidden');
     }, 5000);
 });
 
